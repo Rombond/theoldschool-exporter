@@ -1,0 +1,14 @@
+services:
+  theoldschool-exporter:
+    container_name: theoldschool-exporter
+    image: ghcr.io/rombond/theoldschool-exporter:latest
+    ports:
+      - "${EXPORTER_PORT:-9103}:${EXPORTER_PORT:-9103}"
+    environment:
+      - THEOLDSCHOOL_USERNAME=${THEOLDSCHOOL_USERNAME:-}
+      - THEOLDSCHOOL_PASSWORD=${THEOLDSCHOOL_PASSWORD:-}
+      - THEOLDSCHOOL_BASE_URL=${THEOLDSCHOOL_BASE_URL:-https://theoldschool.cc}
+      - METRICS_PATH=${METRICS_PATH:-/metrics}
+      - PORT=${PORT:-9103}
+      - SCRAPE_INTERVAL=${SCRAPE_INTERVAL:-5m}
+    restart: unless-stopped
