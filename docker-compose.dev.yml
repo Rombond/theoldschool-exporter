@@ -5,12 +5,12 @@ services:
       dockerfile: Dockerfile
       args: [PORT]
     ports:
-      - "${EXPORTER_PORT:-9103}:${EXPORTER_PORT:-9103}"
+      - "${EXPORTER_PORT:-9103}:${PORT:-9090}"
     environment:
       - THEOLDSCHOOL_USERNAME=${THEOLDSCHOOL_USERNAME:-}
       - THEOLDSCHOOL_PASSWORD=${THEOLDSCHOOL_PASSWORD:-}
       - THEOLDSCHOOL_BASE_URL=${THEOLDSCHOOL_BASE_URL:-https://theoldschool.cc}
       - METRICS_PATH=${METRICS_PATH:-/metrics}
-      - PORT=${PORT:-9103}
+      - PORT=${PORT:-9090}
       - SCRAPE_INTERVAL=${SCRAPE_INTERVAL:-5m}
     restart: unless-stopped

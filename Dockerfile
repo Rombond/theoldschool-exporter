@@ -24,9 +24,9 @@ COPY --from=builder /app/theoldschool_exporter /usr/local/bin/theoldschool_expor
 
 USER exporter
 
-EXPOSE 9103
+EXPOSE 9090
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
-    CMD wget -qO- http://localhost:9103/health || exit 1
+    CMD wget -qO- http://localhost:9090/health || exit 1
 
 ENTRYPOINT ["/usr/local/bin/theoldschool_exporter"]

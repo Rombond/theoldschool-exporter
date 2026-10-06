@@ -22,7 +22,7 @@ The site only displays sizes rounded to 2 decimals in binary units (e.g. `511.96
 | `THEOLDSCHOOL_BASE_URL` | Site URL | `https://theoldschool.cc` |
 | `THEOLDSCHOOL_USERNAME` | Login username | *required* |
 | `THEOLDSCHOOL_PASSWORD` | Login password | *required* |
-| `PORT` | Server listen port | `9090` (`9103` in `.env.example`) |
+| `PORT` | Server listen port | `9090` (host dev port via `EXPORTER_PORT=9103`) |
 | `METRICS_PATH` | Metrics endpoint path | `/metrics` |
 | `SCRAPE_INTERVAL` | Informational (data is fetched on each scrape) | `5m` |
 

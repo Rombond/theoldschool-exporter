@@ -35,7 +35,7 @@ type config struct {
 func loadConfig() config {
 	baseURL := getEnvOrDefault("THEOLDSCHOOL_BASE_URL", "https://theoldschool.cc")
 	return config{
-		Port:           getEnvOrDefault("PORT", "9103"),
+		Port:           getEnvOrDefault("PORT", "9090"),
 		MetricsPath:    getEnvOrDefault("METRICS_PATH", "/metrics"),
 		Username:       os.Getenv("THEOLDSCHOOL_USERNAME"),
 		Password:       os.Getenv("THEOLDSCHOOL_PASSWORD"),
